@@ -8,7 +8,7 @@ title: string;
 icon:ReactNode;
 description:string;
 }
-const Alert: FC<IProps> = ({type="alert-danger",title,icon,description}) => {
+const Alert: FC<IProps> = ({type,title,icon,description}) => {
   return (
     <div className={type}>
       <div className="alert-header">
