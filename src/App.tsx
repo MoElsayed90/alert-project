@@ -1,33 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { AlertTriangle, Ban, Bell, CheckCheck, Info } from "lucide-react"
+import Alert from "./components/ui/Alert/Alert"
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div >
+        <Alert type={"alert-error"} title={"Something went wrong"} description="Lorem ipsum dolor sit amet consectetur, adipisicing elit.Nihil, corporis. Totam qui facilis praesentium quis, sunt impedit architecto hic et?" icon={<Ban size={20} />} />
+        <Alert type={"alert-info"} title={"Something went wrong"} icon={<Info size={20} />}>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium corrupti beatae recusandae qui officiis itaque quisquam libero sunt neque illo adipisci,<a href="/">excepturi ducimus magni,</a>  necessitatibus assumenda eaque magnam. Saepe, corrupti!
+          </p>
+        </Alert>
+        <Alert type={"alert-success"} title={"Something went wrong"} description="Lorem ipsum dolor sit amet consectetur, adipisicing elit.Nihil, corporis. Totam qui facilis praesentium quis, sunt impedit architecto hic et?" icon={<CheckCheck size={20} />} />
+        <Alert type={"alert-warning"} title={"Something went wrong"} description="Lorem ipsum dolor sit amet consectetur, adipisicing elit.Nihil, corporis. Totam qui facilis praesentium quis, sunt impedit architecto hic et?" icon={<AlertTriangle size={20} />} />
+        <Alert type={"alert-default"} title={"Upgrade your plan"} description="Lorem ipsum dolor sit amet consectetur, adipisicing elit.Nihil, corporis. Totam qui facilis praesentium quis, sunt impedit architecto hic et?" icon={<Bell size={20} />} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
